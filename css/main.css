@@ -1,0 +1,28 @@
+body {
+  background: #222426;
+  color: #616363;
+  font-family: Geneva, Tahoma, Verdana;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+table#map {
+  background: #fff;
+  margin: 0 auto;
+  border-collapse:collapse;
+  box-shadow: 0 0 10px #000;
+}
+table#map td {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+#map td.box {
+  background: url('../images/box.png');
+}
+#map td.user {
+  background: url('../images/user_suit.png');
+}
