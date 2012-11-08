@@ -1,23 +1,29 @@
 $(document).ready(function(){
-  //setup map
-  var y_max = 32;
-  var x_max = 32;
-  for (var y = 0; y < y_max; y++) {
-    $('#map tbody').append('<tr class="y' + y + '"></tr>');
-    for (var x = 0; x < x_max; x++) {
-      $('#map tr.y' + y).append('<td class="x' + x + '"></td>');
+  var y_max;
+  var x_max;
+  var y_loc;
+  var x_loc;
+  
+  //load level 1
+  $.get('levels/level1', function(data) {
+    var rows = data.split('\r\n');
+    var size = rows[0].split(' ');
+    
+    y_max = size[1];
+    x_max = size[0];
+    
+    for (var y = 0; y < y_max; y++) {
+      var row = rows[y+1].split(' ');
+      $('#map tbody').append('<tr class="y' + y + '"></tr>');
+      for (var x = 0; x < x_max; x++) {
+        $('#map tr.y' + y).append('<td class="x' + x + ' ' + row[x] +'"></td>');
+        if (x == 0 && y == 0) {
+          y_loc = y;
+          x_loc = x;
+        }
+      }
     }
-  }
-  
-  //starting location
-  var x_loc = 16;
-  var y_loc = 16;
-  
-  //place user
-  $('.y' + y_loc + ' .x' + x_loc).addClass('user');
-  
-  
-  $('.y8 .x8').addClass('box'); // place box
+  }, 'text');
   
   //user control
   $('body').keypress(function(event) {
@@ -65,5 +71,4 @@ $(document).ready(function(){
     }
     return false;
   }
-
 });

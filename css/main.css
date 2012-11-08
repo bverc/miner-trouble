@@ -11,7 +11,7 @@ h2 {
 }
 table#map {
   background: #fff;
-  margin: 0 auto;
+  margin: 30px auto;
   border-collapse:collapse;
   box-shadow: 0 0 10px #000;
 }
@@ -19,10 +19,11 @@ table#map td {
   width: 16px;
   height: 16px;
   padding: 0;
+  line-height: 1px;
 }
 #map td.box {
   background: url('../images/box.png');
 }
 #map td.user {
-  background: url('../images/user_suit.png');
+  background: url('../images/user.png');
 }

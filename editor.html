@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Push Pull | Editor</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css/editor.css" />
+</head>
+<body>
+  <div id="left">
+    <div>
+      <label for="x_max">Size:</label> <input type="text" name="x_max" size="2" value="10" /> x <input type="text" name="y_max" size="2" value="10" /> <input type="button" value="Set" id="size_change" />
+      <div><span>Current:</span><img id="brush" src="images/user.png" /></div>
+      <div class="icon_group">
+        <img id="cut" src="images/cut.png" />
+      </div>
+      <div class="icon_group">
+        <img id="user" src="images/user.png" />
+        <img id="box" src="images/box.png" />
+        <img id="wall" src="images/wall.png" />
+        <img id="home" src="images/home.png" />
+      </div>
+    </div>
+  </div>
+  <div id="main">
+    <h1>Push Pull | Editor</h1>
+    <table id="map">
+      <tbody></tbody>
+    </table>
+    
+    <input id="gen" type="button" value="Generate" /><br />
+    
+    <textarea id="output"></textarea>
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+  <script src="js/editor.js" type="text/javascript"></script>
+</body>
+</html>
