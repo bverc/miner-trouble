@@ -3,10 +3,7 @@ body {
   color: #616363;
   font-family: Geneva, Tahoma, Verdana;
 }
-h1 {
-  text-align: center;
-}
-h2 {
+h1, h2, p {
   text-align: center;
 }
 table#map {

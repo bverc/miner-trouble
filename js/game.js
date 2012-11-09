@@ -5,26 +5,7 @@ $(document).ready(function(){
   var x_loc;
   var pull_enable = false;
   
-  //load level 1
-  $.get('lvl/1', function(data) {
-    var rows = data.split('\r\n');
-    var size = rows[0].split(' ');
-    
-    y_max = size[1];
-    x_max = size[0];
-    
-    for (var y = 0; y < y_max; y++) {
-      var row = rows[y+1].split(' ');
-      $('#map tbody').append('<tr class="y' + y + '"></tr>');
-      for (var x = 0; x < x_max; x++) {
-        $('#map tr.y' + y).append('<td class="x' + x + ' ' + row[x] +'"></td>');
-        if (x == 0 && y == 0) {
-          y_loc = y;
-          x_loc = x;
-        }
-      }
-    }
-  }, 'text');
+  load(1);
   
   //user control
   $('body').keypress(function(event) {
@@ -124,4 +105,34 @@ $(document).ready(function(){
     }
     return false;
   }
+  
+  // load level
+  function load (lvl) {
+    $.get('lvl/' + lvl, function(data) {
+      var rows = data.split('\r\n');
+      var name = rows[0];
+      var desc = rows[1];
+      var size = rows[2].split(' ');
+      
+      $('#lvl_num').text(lvl);
+      $('#lvl_name').text(name);
+      $('#lvl_desc').text(desc);
+      
+      y_max = size[1];
+      x_max = size[0];
+      
+      for (var y = 0; y < y_max; y++) {
+        var row = rows[y+3].split(' ');
+        $('#map tbody').append('<tr class="y' + y + '"></tr>');
+        for (var x = 0; x < x_max; x++) {
+          $('#map tr.y' + y).append('<td class="x' + x + ' ' + row[x] +'"></td>');
+          if (x == 0 && y == 0) {
+            y_loc = y;
+            x_loc = x;
+          }
+        }
+      }
+    }, 'text');
+  }
+  
 });
