@@ -3,6 +3,7 @@ $(document).ready(function(){
   var x_max;
   var y_loc;
   var x_loc;
+  var pull_enable = false;
   
   //load level 1
   $.get('lvl/1', function(data) {
@@ -29,16 +30,50 @@ $(document).ready(function(){
   $('body').keypress(function(event) {
     switch (event.keyCode) {
       case 37:
-        move(x_loc - 1, y_loc);
+        if (pull_enable) {
+          pull(x_loc + 1, y_loc);
+        } else {
+          move(x_loc - 1, y_loc);
+        }
         break;
       case 38:
-        move(x_loc, y_loc - 1);
+        if (pull_enable) {
+          pull(x_loc, y_loc + 1);
+        } else {
+          move(x_loc, y_loc - 1);
+        }
         break;
       case 39:
-        move(x_loc + 1, y_loc);
+        if (pull_enable) {
+          pull(x_loc - 1, y_loc);
+        } else {
+          move(x_loc + 1, y_loc);
+        }
         break;
       case 40:
-        move(x_loc, y_loc + 1);
+        if (pull_enable) {
+          pull(x_loc, y_loc - 1);
+        } else {
+          move(x_loc, y_loc + 1);
+        }
+        break;
+    }
+  });
+  
+  //enable pull
+  $('body').keydown(function(event) {
+    switch (event.which) {
+      case 65:
+        pull_enable = true;
+        break;
+    }
+  });
+  
+  //disable pull
+  $('body').keyup(function(event) {
+    switch (event.which) {
+      case 65:
+        pull_enable = false;
         break;
     }
   });
@@ -66,6 +101,16 @@ $(document).ready(function(){
       alert('You Win!');
     }
     
+    return true;
+  }
+  
+  function pull (x, y) {
+    var pull_loc = $('.y' + y + ' .x' + x);
+    if (!isObstacle (2*x_loc - x, 2*y_loc - y) && pull_loc.hasClass('box')) {
+      pull_loc.removeClass('box');
+      $('.y' + y_loc + ' .x' + x_loc).addClass('box');
+      move(2*x_loc - x, 2*y_loc - y);
+    }
     return true;
   }
   
