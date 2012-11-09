@@ -4,8 +4,9 @@ $(document).ready(function(){
   var y_loc;
   var x_loc;
   var pull_enable = false;
+  var lvl = 1;
   
-  load(1);
+  load(lvl);
   
   //user control
   $('body').keypress(function(event) {
@@ -79,7 +80,7 @@ $(document).ready(function(){
     x_loc = x_new;
     
     if ($('.y' + y_loc + ' .x' + x_loc).hasClass('home')) {
-      alert('You Win!');
+      win();
     }
     
     return true;
@@ -108,6 +109,7 @@ $(document).ready(function(){
   
   // load level
   function load (lvl) {
+    $('#map tbody').html('');
     $.get('lvl/' + lvl, function(data) {
       var rows = data.split('\r\n');
       var name = rows[0];
@@ -133,6 +135,12 @@ $(document).ready(function(){
         }
       }
     }, 'text');
+  }
+  
+  function win () {
+    alert('You Win!');
+    lvl = lvl + 1;
+    load(lvl);
   }
   
 });
