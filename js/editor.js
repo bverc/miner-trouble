@@ -26,7 +26,7 @@ $(document).ready(function(){
         $(this).html('');
       }
       else {
-        $(this).html('<img class="' + brush + '" src="images/' + brush + '.png" />');
+        $(this).html('<img class="' + brush + '" src="img/' + brush + '.png" />');
       }
     });
   }
@@ -54,7 +54,7 @@ $(document).ready(function(){
   $('#left .icon_group img').click(function() {
     brush = $(this).attr('id');
     $('#brush').attr('src','images/' + brush + '.png');
-    $('#map').css('cursor', 'url(images/' + brush + '.png) 8 8, crosshair');
+    $('#map').css('cursor', 'url(img/' + brush + '.png) 8 8, crosshair');
   });
   
 });
