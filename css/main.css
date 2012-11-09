@@ -24,10 +24,13 @@ table#map td {
 #map td.box {
   background: url('../images/box.png');
 }
-#map td.user {
-  background: url('../images/user.png');
-}
 #map td.wall {
   background: url('../images/wall.png');
+}
+#map td.home {
+  background: url('../images/home.png');
+}
+#map td.user {
+  background: url('../images/user.png');
 }
 

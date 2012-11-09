@@ -62,6 +62,10 @@ $(document).ready(function(){
     y_loc = y_new;
     x_loc = x_new;
     
+    if ($('.y' + y_loc + ' .x' + x_loc).hasClass('home')) {
+      alert('You Win!');
+    }
+    
     return true;
   }
   
