@@ -69,6 +69,10 @@ $(document).ready(function(){
     if (x < 0 || x >= x_max || y < 0 || y >= y_max) {
       return true;
     }
+    var tile = $('.y' + y + ' .x' + x);
+    if (tile.hasClass('wall') || tile.hasClass('box')) {
+      return true;
+    }
     return false;
   }
 });

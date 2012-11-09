@@ -27,3 +27,7 @@ table#map td {
 #map td.user {
   background: url('../images/user.png');
 }
+#map td.wall {
+  background: url('../images/wall.png');
+}
+
