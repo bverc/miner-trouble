@@ -5,7 +5,7 @@ $(document).ready(function(){
   var x_loc;
   
   //load level 1
-  $.get('levels/level1', function(data) {
+  $.get('lvl/1', function(data) {
     var rows = data.split('\r\n');
     var size = rows[0].split(' ');
     

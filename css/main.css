@@ -22,15 +22,15 @@ table#map td {
   line-height: 1px;
 }
 #map td.box {
-  background: url('../images/box.png');
+  background: url('../img/box.png');
 }
 #map td.wall {
-  background: url('../images/wall.png');
+  background: url('../img/wall.png');
 }
 #map td.home {
-  background: url('../images/home.png');
+  background: url('../img/home.png');
 }
 #map td.user {
-  background: url('../images/user.png');
+  background: url('../img/user.png');
 }
 
