@@ -111,7 +111,7 @@ $(document).ready(function(){
   function load (lvl) {
     $('#map tbody').html('');
     $.get('lvl/' + lvl, function(data) {
-      var rows = data.split('\r\n');
+      var rows = data.split('\n');
       var name = rows[0];
       var desc = rows[1];
       var size = rows[2].split(' ');
