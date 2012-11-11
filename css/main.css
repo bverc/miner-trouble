@@ -6,11 +6,21 @@ body {
 h1, h2, p {
   text-align: center;
 }
+#main {
+  width: 700px;
+  margin: 4em auto;
+  background: linear-gradient(#a90329, #6d0019);
+  padding: 2em;
+  box-shadow: 0 0 10px #000;
+  border-radius: 15px;
+}
 table#map {
+  float: left;
   background: #fff;
   margin: 30px auto;
   border-collapse:collapse;
-  box-shadow: 0 0 10px #000;
+  vertical-align: middle;
+  border: 1px solid #000;
 }
 table#map td {
   width: 16px;

@@ -123,9 +123,18 @@ $(document).ready(function(){
       y_max = size[1];
       x_max = size[0];
       
+      for (var i = 0; i < (20-y_max)/2; i++) {
+        $('#map tbody').append('<tr><td class="wall" colspan="20"></td></tr>');
+      }
+      
       for (var y = 0; y < y_max; y++) {
         var row = rows[y+3].split(' ');
         $('#map tbody').append('<tr class="y' + y + '"></tr>');
+        if (x_max < 20) {
+          for (var i = 0; i < (20-x_max)/2; i++) {
+            $('#map tr.y' + y).append('<td class="wall"></td>');
+          }
+        }
         for (var x = 0; x < x_max; x++) {
           $('#map tr.y' + y).append('<td class="x' + x + ' ' + row[x] +'"></td>');
           if (x == 0 && y == 0) {
@@ -133,6 +142,15 @@ $(document).ready(function(){
             x_loc = x;
           }
         }
+        if (x_max < 20) {
+          for (var i = 0; i < (20-x_max)/2; i++) {
+            $('#map tr.y' + y).append('<td class="wall"></td>');
+          }
+        }
+      }
+      
+      for (var i = 0; i < (20-y_max)/2; i++) {
+        $('#map tbody').append('<tr><td class="wall" colspan="20"></td></tr>');
       }
     }, 'text');
   }
