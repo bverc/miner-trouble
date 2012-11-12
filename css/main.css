@@ -9,6 +9,7 @@ h1, h2, p {
 #main {
   width: 700px;
   margin: 4em auto;
+  background: #a90329;
   background: linear-gradient(#a90329, #6d0019);
   padding: 2em;
   box-shadow: 0 0 10px #000;

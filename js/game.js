@@ -9,7 +9,7 @@ $(document).ready(function(){
   load(lvl);
   
   //user control
-  $('body').keypress(function(event) {
+  $('body').keydown(function(event) {
     switch (event.keyCode) {
       case 37:
         if (pull_enable) {
