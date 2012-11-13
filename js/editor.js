@@ -34,7 +34,7 @@ $(document).ready(function(){
   // Generate Output
   $('#gen').click(function() {
     var output;
-    output += $('input[name=name]').val() + '\r\n';
+    output = $('input[name=name]').val() + '\r\n';
     output += $('input[name=desc]').val() + '\r\n';
     output += x_max + ' ' + y_max + '\r\n';
     for (var y = 0; y < y_max; y++) {
