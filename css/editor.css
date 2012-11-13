@@ -6,6 +6,10 @@ body {
   margin: 0;
   height: 100%;
 }
+label {
+  width: 6em;
+  float: left;
+}
 #left {
   background: #555;
   width: 300px;
@@ -28,7 +32,7 @@ body {
   vertical-align: bottom;
   padding: 2px;
 }
-#main {
+#right {
   position:absolute;
   top:0;
   bottom:0;
