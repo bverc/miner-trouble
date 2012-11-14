@@ -55,7 +55,7 @@ $(document).ready(function(){
   // Set Brush
   $('#left .icon_group img').click(function() {
     brush = $(this).attr('id');
-    $('#brush').attr('src','images/' + brush + '.png');
+    $('#brush').attr('src','img/' + brush + '.png');
     $('#map').css('cursor', 'url(img/' + brush + '.png) 8 8, crosshair');
   });
   
