@@ -68,6 +68,7 @@ $(document).ready(function(){
   // level select
   $('#levels a').click(function() {
     load($(this).text());
+    return false;
   });
   
   function move (x_new, y_new) {
@@ -153,13 +154,13 @@ $(document).ready(function(){
           }
         }
         if (x_max < 20) {
-          for (var i = 0; i < (20-x_max)/2; i++) {
+          for (var i = 0; i < (19-x_max)/2; i++) {
             $('#map tr.y' + y).append('<td class="wall"></td>');
           }
         }
       }
       
-      for (var i = 0; i < (20-y_max)/2; i++) {
+      for (var i = 0; i < (19-y_max)/2; i++) {
         $('#map tbody').append('<tr><td class="wall" colspan="20"></td></tr>');
       }
     }, 'text');
