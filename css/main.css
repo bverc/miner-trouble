@@ -16,6 +16,13 @@ h1, h2, p {
   border-radius: 15px;
   color: #eee;
 }
+#main a {
+  color: #eee;
+  text-decoration: none;
+}
+#main a:hover {
+  text-decoration: underline;
+}
 table#map {
   float: left;
   background: #fff;
@@ -41,6 +48,9 @@ table#map td {
 }
 #map td.user {
   background: url('../img/user.png');
+}
+#levels a {
+  padding: 0.2em;
 }
 .key {
   border: 1px solid black;

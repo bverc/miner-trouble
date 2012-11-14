@@ -5,8 +5,13 @@ $(document).ready(function(){
   var x_loc;
   var pull_enable = false;
   var lvl = 1;
+  var lvl_top = 3;
   
   load(lvl);
+  
+  for (var i = 1; i <= lvl_top; i++) {
+    $('#levels').append('<a href="#">' + i + '</a>');
+  }
   
   //user control
   $('body').keydown(function(event) {
@@ -58,6 +63,11 @@ $(document).ready(function(){
         pull_enable = false;
         break;
     }
+  });
+  
+  // level select
+  $('#levels a').click(function() {
+    load($(this).text());
   });
   
   function move (x_new, y_new) {
