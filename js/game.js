@@ -118,7 +118,7 @@ $(document).ready(function(){
       
       $('#lvl_num').text(lvl);
       $('#lvl_name').text(name);
-      $('#lvl_desc').text(desc);
+      $('#lvl_desc').html(desc);
       
       y_max = size[1];
       x_max = size[0];
