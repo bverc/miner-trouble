@@ -5,7 +5,7 @@ $(document).ready(function(){
   var x_loc;
   var pull_enable = false;
   var lvl = 1;
-  var lvl_top = 3;
+  var lvl_top = 4;
   
   load(lvl);
   
@@ -67,18 +67,31 @@ $(document).ready(function(){
   
   // level select
   $('#levels a').click(function() {
-    load($(this).text());
+    lvl = $(this).text();
+    load(lvl);
     return false;
   });
   
   function move (x_new, y_new) {
+    // Check for bomb
+    if ($('.y' + y_new + ' .x' + x_new).hasClass('bomb')) {
+      alert('Watch out for bombs!');
+      load(lvl);
+      return;
+    }
+    
     // push
     if ($('.y' + y_new + ' .x' + x_new).hasClass('box')) {
       if (isObstacle(2*x_new - x_loc, 2*y_new - y_loc)) {
         return false;
       }
       $('.y' + y_new + ' .x' + x_new).removeClass('box');
-      $('.y' + (2*y_new - y_loc) + ' .x' + (2*x_new - x_loc)).addClass('box');
+      if (isBomb(2*x_new - x_loc, 2*y_new - y_loc)) {
+        $('.y' + (2*y_new - y_loc) + ' .x' + (2*x_new - x_loc)).removeClass('bomb');
+      }
+      else {
+        $('.y' + (2*y_new - y_loc) + ' .x' + (2*x_new - x_loc)).addClass('box');
+      }
     }
     
     //check for obstacles
@@ -113,6 +126,14 @@ $(document).ready(function(){
     }
     var tile = $('.y' + y + ' .x' + x);
     if (tile.hasClass('wall') || tile.hasClass('box')) {
+      return true;
+    }
+    return false;
+  }
+  
+  function isBomb (x, y) {
+    var tile = $('.y' + y + ' .x' + x);
+    if (tile.hasClass('bomb')) {
       return true;
     }
     return false;

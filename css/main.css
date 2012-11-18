@@ -49,6 +49,9 @@ table#map td {
 #map td.user {
   background: url('../img/user.png');
 }
+#map td.bomb {
+  background: url('../img/bomb.png');
+}
 #levels a {
   padding: 0.2em;
 }
