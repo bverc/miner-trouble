@@ -5,7 +5,8 @@ $(document).ready(function(){
   var x_loc;
   var pull_enable = false;
   var lvl = 1;
-  var lvl_top = 4;
+  var lvl_top = 5;
+  var rubies;
   
   load(lvl);
   
@@ -80,6 +81,14 @@ $(document).ready(function(){
       return;
     }
     
+    // Check for ruby
+    if ($('.y' + y_new + ' .x' + x_new).hasClass('ruby')) {
+      $('.y' + y_new + ' .x' + x_new).removeClass('ruby');
+      if (rubies > 0) {
+        rubies--;
+      }
+    }
+    
     // push
     if ($('.y' + y_new + ' .x' + x_new).hasClass('box')) {
       if (isObstacle(2*x_new - x_loc, 2*y_new - y_loc)) {
@@ -128,6 +137,10 @@ $(document).ready(function(){
     if (tile.hasClass('wall') || tile.hasClass('box')) {
       return true;
     }
+    if (tile.hasClass('home') && rubies > 0) {
+      alert('You still have rubies to collect.');
+      return true;
+    }
     return false;
   }
   
@@ -155,6 +168,8 @@ $(document).ready(function(){
       y_max = size[1];
       x_max = size[0];
       
+      rubies = 0;
+      
       for (var i = 0; i < (20-y_max)/2; i++) {
         $('#map tbody').append('<tr><td class="wall" colspan="20"></td></tr>');
       }
@@ -169,9 +184,12 @@ $(document).ready(function(){
         }
         for (var x = 0; x < x_max; x++) {
           $('#map tr.y' + y).append('<td class="x' + x + ' ' + row[x] +'"></td>');
-          if (x == 0 && y == 0) {
+          if (row[x] == 'user') {
             y_loc = y;
             x_loc = x;
+          }
+          if (row[x] == 'ruby') {
+            rubies++;
           }
         }
         if (x_max < 20) {

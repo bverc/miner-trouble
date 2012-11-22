@@ -1,0 +1,17 @@
+Treasure
+Collect the rubies before heading home
+14 14
+0 0 0 0 0 0 0 0 0 0 0 0 0 user 
+wall ruby wall wall wall wall wall wall wall wall wall wall wall wall 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+wall wall wall wall wall wall wall wall wall wall wall wall ruby wall 
+ruby ruby wall wall wall 0 0 0 0 0 0 0 0 0 
+bomb bomb wall wall 0 0 0 0 wall wall wall wall wall wall 
+bomb bomb wall 0 box box wall 0 0 wall 0 0 0 ruby 
+bomb bomb wall bomb ruby bomb wall 0 0 0 0 wall box wall 
+bomb bomb wall wall bomb wall wall wall 0 wall 0 wall 0 ruby 
+0 0 0 wall wall wall home wall 0 wall 0 wall 0 wall 
+0 0 0 0 0 0 0 wall 0 wall 0 wall 0 ruby 
+wall wall 0 0 0 0 0 0 0 wall 0 wall 0 wall 
+box box 0 0 0 0 0 0 wall 0 0 wall 0 ruby 
+box box 0 0 0 0 0 0 wall 0 0 wall 0 wall 
