@@ -208,7 +208,7 @@ $(document).ready(function(){
   function win () {
     alert('You Win!');
     lvl = lvl + 1;
-    load(lvl);
+    load(lvl%lvl_top);
   }
   
 });
