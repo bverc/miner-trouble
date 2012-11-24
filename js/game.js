@@ -5,7 +5,7 @@ $(document).ready(function(){
   var x_loc;
   var pull_enable = false;
   var lvl = 1;
-  var lvl_top = 5;
+  var lvl_top = 6;
   var rubies;
   
   load(lvl);
