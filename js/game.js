@@ -46,6 +46,9 @@ $(document).ready(function(){
         }
         break;
     }
+    
+    // stop scrolling on small browser windows.
+    return false;
   });
   
   //enable pull
