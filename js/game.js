@@ -173,15 +173,15 @@ $(document).ready(function(){
       
       rubies = 0;
       
-      for (var i = 0; i < (20-y_max)/2; i++) {
+      for (var i = 0; i < (16-y_max)/2; i++) {
         $('#map tbody').append('<tr><td class="wall" colspan="20"></td></tr>');
       }
       
       for (var y = 0; y < y_max; y++) {
         var row = rows[y+3].split(' ');
         $('#map tbody').append('<tr class="y' + y + '"></tr>');
-        if (x_max < 20) {
-          for (var i = 0; i < (20-x_max)/2; i++) {
+        if (x_max < 16) {
+          for (var i = 0; i < (16-x_max)/2; i++) {
             $('#map tr.y' + y).append('<td class="wall"></td>');
           }
         }
@@ -195,14 +195,14 @@ $(document).ready(function(){
             rubies++;
           }
         }
-        if (x_max < 20) {
-          for (var i = 0; i < (19-x_max)/2; i++) {
+        if (x_max < 16) {
+          for (var i = 0; i < (15-x_max)/2; i++) {
             $('#map tr.y' + y).append('<td class="wall"></td>');
           }
         }
       }
       
-      for (var i = 0; i < (19-y_max)/2; i++) {
+      for (var i = 0; i < (15-y_max)/2; i++) {
         $('#map tbody').append('<tr><td class="wall" colspan="20"></td></tr>');
       }
     }, 'text');
