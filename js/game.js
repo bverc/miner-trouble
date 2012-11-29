@@ -79,7 +79,7 @@ $(document).ready(function(){
   function move (x_new, y_new) {
     // Check for bomb
     if ($('.y' + y_new + ' .x' + x_new).hasClass('bomb')) {
-      alert('Watch out for bombs!');
+      alert('Watch out for dynamite!');
       load(lvl);
       return;
     }
