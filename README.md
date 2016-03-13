@@ -2,9 +2,9 @@ Miner Trouble is a simple, browser based, top-down puzzle game. It was inspired 
 
 ## How to play
 
-To play, either download the code and open index.html in your web browser or visit our [testing mirror](http://game.no8hacks.com).
+To play, either download the code and open index.html in your web browser or visit our [testing mirror](http://dev.no8hacks.com/miner/).
 
-You play as Murray the Minor who needs to navigate his way out of the mines, by solving a series on puzzles. The game uses basic controls:
+You play as Murray the Miner who needs to navigate his way out of the mines, by solving a series on puzzles. The game uses basic controls:
 * Use left, up, right, down keys to navigate Maurray
 * Carts may be pushed around the puzzle
 * Carts may be pulled while holding A
